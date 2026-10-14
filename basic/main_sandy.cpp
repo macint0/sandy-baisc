@@ -3,6 +3,10 @@
 #include <verilated.h>
 #include "Vtop_sandy.h"
 
+// Legacy Verilator time hook. Verilator declares it weak, but MinGW/PE has no
+// weak undefined symbols, so the wrapper must define it explicitly.
+double sc_time_stamp() { return 0; }
+
 // screen dimensions
 const int H_RES = 640;
 const int V_RES = 480;

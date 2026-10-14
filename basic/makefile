@@ -5,7 +5,7 @@ SDL_LDFLAGS = `sdl2-config --libs`
 sandy: sandy.exe
 
 %.exe: %.mk
-	make -j$$(nproc) -C ./obj_dir -f Vtop_$< OPT_FAST=-O2
+	make -j$$(nproc) -C ./obj_dir -f Vtop_$< OPT_FAST=-O2 OPT_GLOBAL=-O2
 
 %.mk: top_%.sv
 	verilator ${VFLAGS} \
